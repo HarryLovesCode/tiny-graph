@@ -63,22 +63,22 @@ export class Graph<T> {
   /**
    * Current graph context.
    */
-  public get context() {
+  public get context(): Ctx<T> {
     return this._context;
   }
 
   /**
    * Current node key.
    */
-  public get current() {
+  public get current(): string | undefined {
     return this._currentNode?.key;
   }
 
   /**
    * Available neighbors from the current node.
    */
-  public get availableTransitions() {
-    return this._transitions.get(this._currentNode!.key);
+  public get availableTransitions(): string[] | undefined {
+    return Array.from(this._transitions.get(this._currentNode!.key) || []);
   }
 
   /**
@@ -88,7 +88,7 @@ export class Graph<T> {
    * @param r To node
    * @returns `this` for chaining.
    */
-  public edge(l: string, r: string) {
+  public edge(l: string, r: string): Graph<T> {
     const existing = this._transitions.get(l);
 
     if (!existing) this._transitions.set(l, new Set([r]));
@@ -104,7 +104,7 @@ export class Graph<T> {
    * @param toAdd Node to append to graph.
    * @returns `this` for chaining.
    */
-  public node(key: string, toAdd: Node<T>) {
+  public node(key: string, toAdd: Node<T>): Graph<T> {
     this._nodes.set(key, toAdd);
     return this;
   }
@@ -190,7 +190,7 @@ export class Graph<T> {
    * @param nodeName String name of node to begin with.
    * @returns `this` for chaining.
    */
-  public setStart(nodeName: string) {
+  public setStart(nodeName: string): Graph<T> {
     if (!this._nodes.get(nodeName)) {
       throw new Error(
         "Cannot start from node that has not been registered in graph. " +

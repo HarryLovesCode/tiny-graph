@@ -2,7 +2,7 @@
 
 TL;DR: [Skip to example](#example).
 
-Feel free to fork and modify as you see fit (MIT baby). No hard feelings if this doesn't float your boat. 
+Feel free to fork and modify as you see fit (Unlicense baby). No hard feelings if this doesn't float your boat. 
 The idea is to have something good enough for prod, but fast enough for POC.
 
 ## Background

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "keywords": [],
   "author": "Harry G",
-  "license": "MIT",
+  "license": "Unlicense",
   "type": "module",
   "dependencies": {
     "debug": "^4.4.3"

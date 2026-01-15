@@ -118,7 +118,7 @@ export class Graph<T> {
   public async run(context?: Patch<T>): Promise<Ctx<T>> {
     this._context = this.applyPatch(this._context, context);
     debug(`Initial context: ${JSON.stringify(this._context)}`);
-    while (await this.step(context)) {}
+    while (await this.step()) {}
 
     return this._context;
   }

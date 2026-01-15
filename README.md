@@ -1,9 +1,13 @@
-# TinyGraph
+# tinygraph-ts
 
 TL;DR: [Skip to example](#example).
 
 Feel free to fork and modify as you see fit (Unlicense baby). No hard feelings if this doesn't float your boat. 
 The idea is to have something good enough for prod, but fast enough for POC.
+
+```
+npm i tinygraph-ts
+```
 
 ## Background
 
@@ -49,7 +53,7 @@ This library has one dependency: `debug`. Use `DEBUG=graph node <your command>` 
 ## Example
 
 ```ts
-import { Graph, type Node, type Ctx } from "./index.js";
+import { Graph, type Node, type Ctx } from "tinygraph-ts";
 
 // fetch.ts
 class FetchNode implements Node<State> {
